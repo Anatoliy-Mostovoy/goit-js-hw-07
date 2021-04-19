@@ -16,15 +16,10 @@ const images = [
     },
   ];
 
-const galleryEl = images.map(image=> {
-    const doList = document.createElement('li');
-    const doImg = document.createElement('img');
-    doImg.src=image.url;
-    doImg.alt=image.alt;
-    doImg.width=320;
-    doList.append(doImg);
-    return doList;
-});
-
 const ulEl = document.querySelector('#gallery');
-ulEl.append(...galleryEl)
+
+const galleryEl = images.map(image=> `<li><img class="img-cat" src = "${image.url}" alt = "${image.alt}" width=350></li>`).join('');
+console.log(galleryEl);
+
+ulEl.insertAdjacentHTML('afterbegin', galleryEl);
+
