@@ -16,9 +16,9 @@ function onTargetDecrementBtnClick(){
     totalValue.innerHTML=counterValue;
 };
 
-incrementBtn.addEventListener('click', onTargetIncrementBtnClic);
+incrementBtn.addEventListener('click', onTargetIncrementBtnClick);
  
-function onTargetIncrementBtnClic (){
+function onTargetIncrementBtnClick (){
     counterValue+=1;
     totalValue.innerHTML=counterValue;
 };
