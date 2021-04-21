@@ -5,9 +5,7 @@ const destroyBtn = document.querySelector('[data-action="destroy"]')
 
 inputValue.addEventListener('click', onInputValue);
 
-function onInputValue(event){
-    // createBoxes(event.currentTarget.value)
-}
+function onInputValue(event){}
 
 function createBoxes(amount){
    const allDiv=[];
@@ -17,6 +15,11 @@ function createBoxes(amount){
         divCreate.classList.add('box_item')
         divCreate.style.width = `${i*10+30}px`;
         divCreate.style.height = `${i*10+30}px`;
+        divCreate.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`;
+
+        function getRandom(min, max){
+          return Math.ceil(Math.random() * (max - min) + min)
+        }
         allDiv.push(divCreate);
     }
 
@@ -26,14 +29,12 @@ function createBoxes(amount){
 renderBtn.addEventListener('click',onRenderBtnClick);
 
 function onRenderBtnClick(){
-console.log('Хотим создать')
 createBoxes(inputValue.value);
 }
 
 destroyBtn.addEventListener('click',onDestroyBtnClick);
 
 function onDestroyBtnClick(){
-    console.log('Хотим удалить')
     inputValue.value='';
     mainBox.innerHTML='';
 } 
