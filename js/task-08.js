@@ -10,13 +10,15 @@ function onInputValue(event){
 }
 
 function createBoxes(amount){
-   
+   const allDiv=[];
+
     for(let i=0; i<amount; i+=1){
-        const divCrete = document.createElement('div');
-        divCrete.classList.add('box_item')
-        mainBox.appendChild(divCrete)
+        const divCreate = document.createElement('div');
+        divCreate.classList.add('box_item')
+        allDiv.push(divCreate);
     }
     
+    mainBox.append(...allDiv)
 }
 
 renderBtn.addEventListener('click',onRenderBtnClick);
