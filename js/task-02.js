@@ -11,7 +11,7 @@ const ulEl = document.querySelector('#ingredients');
 
 const listElOfLi = ingredients.map(ingredient=>{
   const liEl= document.createElement('li');
-  liEl.textContent=(`${ingredient}`);
+  liEl.textContent= ingredient;
   return liEl;
 });
 
