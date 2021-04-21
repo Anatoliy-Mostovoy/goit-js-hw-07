@@ -15,9 +15,11 @@ function createBoxes(amount){
     for(let i=0; i<amount; i+=1){
         const divCreate = document.createElement('div');
         divCreate.classList.add('box_item')
+        divCreate.style.width = `${i*10+30}px`;
+        divCreate.style.height = `${i*10+30}px`;
         allDiv.push(divCreate);
     }
-    
+
     mainBox.append(...allDiv)
 }
 
